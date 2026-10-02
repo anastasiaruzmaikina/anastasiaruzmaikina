@@ -1,0 +1,14 @@
+import {createRequire} from 'node:module';
+import {mkdir,copyFile,readdir} from 'node:fs/promises';
+import {dirname,join} from 'node:path';
+const require=createRequire(import.meta.url);
+const target=new URL('../public/ocr/',import.meta.url);await mkdir(target,{recursive:true});
+const tess=dirname(require.resolve('tesseract.js/package.json'));
+const core=dirname(require.resolve('tesseract.js-core',{paths:[tess]}));
+await copyFile(join(tess,'dist/worker.min.js'),new URL('worker.min.js',target));
+for(const f of await readdir(core))if(f.endsWith('.wasm')||f.endsWith('.wasm.js'))await copyFile(join(core,f),new URL(f,target));
+const lang=dirname(require.resolve('@tesseract.js-data/eng/package.json'));
+await copyFile(join(lang,'4.0.0/eng.traineddata.gz'),new URL('eng.traineddata.gz',target));
+await copyFile(join(tess,'LICENSE.md'),new URL('TESSERACT-LICENSE.txt',target));
+await copyFile(join(core,'LICENSE'),new URL('CORE-LICENSE.txt',target));
+console.log('Same-origin OCR worker, WASM variants and English model copied.');

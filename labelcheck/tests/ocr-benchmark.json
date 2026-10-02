@@ -1,0 +1,135 @@
+{
+  "environment": "Node.js, Linux x64; same English model and sparse-text PSM as browser; does not measure browser/network latency",
+  "initSeconds": 0.27914426800000003,
+  "results": [
+    {
+      "fixture": "match",
+      "seconds": 0.710095113,
+      "confidence": 95,
+      "checks": [
+        {
+          "field": "Brand name",
+          "status": "match"
+        },
+        {
+          "field": "Class / type",
+          "status": "match"
+        },
+        {
+          "field": "Alcohol content",
+          "status": "match"
+        },
+        {
+          "field": "Net contents",
+          "status": "match"
+        },
+        {
+          "field": "Producer / address",
+          "status": "match"
+        },
+        {
+          "field": "Country of origin",
+          "status": "skip"
+        },
+        {
+          "field": "Warning text",
+          "status": "match"
+        },
+        {
+          "field": "Warning heading",
+          "status": "match"
+        },
+        {
+          "field": "Warning formatting",
+          "status": "review"
+        }
+      ]
+    },
+    {
+      "fixture": "abv",
+      "seconds": 0.6253034069999999,
+      "confidence": 95,
+      "checks": [
+        {
+          "field": "Brand name",
+          "status": "match"
+        },
+        {
+          "field": "Class / type",
+          "status": "match"
+        },
+        {
+          "field": "Alcohol content",
+          "status": "mismatch"
+        },
+        {
+          "field": "Net contents",
+          "status": "match"
+        },
+        {
+          "field": "Producer / address",
+          "status": "match"
+        },
+        {
+          "field": "Country of origin",
+          "status": "skip"
+        },
+        {
+          "field": "Warning text",
+          "status": "match"
+        },
+        {
+          "field": "Warning heading",
+          "status": "match"
+        },
+        {
+          "field": "Warning formatting",
+          "status": "review"
+        }
+      ]
+    },
+    {
+      "fixture": "warning",
+      "seconds": 0.5999335329999999,
+      "confidence": 95,
+      "checks": [
+        {
+          "field": "Brand name",
+          "status": "match"
+        },
+        {
+          "field": "Class / type",
+          "status": "match"
+        },
+        {
+          "field": "Alcohol content",
+          "status": "match"
+        },
+        {
+          "field": "Net contents",
+          "status": "match"
+        },
+        {
+          "field": "Producer / address",
+          "status": "match"
+        },
+        {
+          "field": "Country of origin",
+          "status": "skip"
+        },
+        {
+          "field": "Warning text",
+          "status": "mismatch"
+        },
+        {
+          "field": "Warning heading",
+          "status": "mismatch"
+        },
+        {
+          "field": "Warning formatting",
+          "status": "review"
+        }
+      ]
+    }
+  ]
+}
